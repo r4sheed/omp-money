@@ -13,11 +13,37 @@
 #include <a_samp>
 
 static 
-	INC_g_sMoney[MAX_PLAYERS];
+	INC_gsMoney[MAX_PLAYERS];
+
+public OnPlayerUpdate(playerid)
+{
+	new
+		money = GetPlayerMoney(playerid);
+	if(money != INC_gsMoney[playerid])
+	{
+		ResetPlayerMoney(playerid);
+		GivePlayerMoney(playerid, INC_gsMoney[playerid]);
+	}
+	#if defined Money_OnPlayerUpdate
+		return Money_OnPlayerUpdate(playerid);
+	#else
+		return 1;
+	#endif
+}
+
+#if defined _ALS_OnPlayerUpdate
+	#undef OnPlayerUpdate
+#else
+	#define _ALS_OnPlayerUpdate
+#endif
+#define OnPlayerUpdate Money_OnPlayerUpdate
+#if defined Money_OnPlayerUpdate
+	forward Money_OnPlayerUpdate(playerid);
+#endif
 
 public OnPlayerDisconnect(playerid, reason)
 {
-	INC_g_sMoney[playerid] = 0;
+	INC_gsMoney[playerid] = 0;
 	#if defined Money_OnPlayerDisconnect
 		return Money_OnPlayerDisconnect(playerid, reason);
 	#else
@@ -41,7 +67,7 @@ stock Money_ResetPlayerMoney(playerid)
 		ret = ResetPlayerMoney(playerid);
 	if(ret)
 	{
-		INC_g_sMoney[playerid] = 0;
+		INC_gsMoney[playerid] = 0;
 	}
 
 	return ret;
@@ -60,7 +86,7 @@ stock Money_GivePlayerMoney(playerid, money)
 		ret = GivePlayerMoney(playerid, money);
 	if(ret)
 	{
-		INC_g_sMoney[playerid] += money;
+		INC_gsMoney[playerid] += money;
 	}
 
 	return ret;
