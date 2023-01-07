@@ -1,10 +1,10 @@
 {
 	"user": "r4sheed",
-	"repo": "samp-money",
+	"repo": "omp-money",
 	"tag": "0.0.1",
 	"entry": "test.pwn",
 	"output": "gamemodes/test.amx",
 	"dependencies": [
-		"pawn-lang/samp-stdlib"
+		"openmultiplayer/omp-stdlib"
 	]
 }

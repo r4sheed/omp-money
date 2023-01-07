@@ -10,7 +10,7 @@
 #endif
 #define _samp_money_included
 
-#include <a_samp>
+#include <open.mp>
 
 static 
 	INC_gsMoney[MAX_PLAYERS];
@@ -107,7 +107,7 @@ stock Money_GivePlayerMoney(playerid, money)
 #define GivePlayerMoney( Money_GivePlayerMoney(
 
 /**
- * <library>samp-money</library>
+ * <library>omp-money</library>
  * <summary>Sets money for a player.</summary>
  * <param name="playerid">The ID of the player to set money to</param>
  * <param name="money">The amount of money to set.</param>

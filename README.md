@@ -1,6 +1,6 @@
-# samp-money
+# omp-money
 
-[![sampctl](https://img.shields.io/badge/sampctl-samp--money-2f2f2f.svg?style=for-the-badge)](https://github.com/r4sheed/samp-money)
+[![sampctl](https://img.shields.io/badge/sampctl-omp--money-2f2f2f.svg?style=for-the-badge)](https://github.com/r4sheed/omp-money)
 
 <!--
 Short description of your library, why it's useful, some examples, pictures or
@@ -31,13 +31,13 @@ Happy Pawning!
 Simply install to your project:
 
 ```bash
-sampctl package install r4sheed/samp-money
+sampctl package install r4sheed/omp-money
 ```
 
 Include in your code and begin using the library:
 
 ```pawn
-#include <samp-money>
+#include <omp-money>
 ```
 
 ## Usage
