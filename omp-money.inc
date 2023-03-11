@@ -21,15 +21,8 @@ public OnPlayerUpdate(playerid)
 		money = GetPlayerMoney(playerid);
 	if(money != INC_gsMoney[playerid])
 	{
-		if(money > INC_gsMoney[playerid])
-		{
-			ResetPlayerMoney(playerid);
-			GivePlayerMoney(playerid, INC_gsMoney[playerid]);
-		}
-		else
-		{
-			INC_gsMoney[playerid] = money;
-		}
+		ResetPlayerMoney(playerid);
+		GivePlayerMoney(playerid, INC_gsMoney[playerid]);
 	}
 	#if defined Money_OnPlayerUpdate
 		return Money_OnPlayerUpdate(playerid);
